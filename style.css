@@ -169,7 +169,7 @@ color: #fff;
   max-width: 340px;
   width: 100%;
   backdrop-filter: blur(8px);
-  z-index: 9999;
+  z-index: 99999;
 }
 
 .img-border {
@@ -179,7 +179,7 @@ color: #fff;
 }
 
 .profile-img {
-     display: inline-flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 2px 2px 2px 2px;
