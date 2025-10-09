@@ -5,6 +5,7 @@ color: #fff;
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  position: relative;
 }
 
 
@@ -380,7 +381,7 @@ button1 {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   background: rgba(0, 0, 0, 0.3);
   background-image: radial-gradient(
     circle at 50% 50%,
@@ -391,7 +392,8 @@ button1 {
   background-size: 8px 8px;
   --f: blur(1em) brightness(6);
   animation: hii 10s linear infinite;
-   backdrop-filter: var(--f); 
+    backdrop-filter: var(--f);
+  -webkit-backdrop-filter: var(--f); 
 }
 
 @keyframes hii {
