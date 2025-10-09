@@ -5,7 +5,6 @@ color: #fff;
   background-position: center;
   background-repeat: no-repeat;
   overflow-x: hidden;
-  position: relative;
 }
 
 
@@ -22,7 +21,7 @@ color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
+  z-index: 999999;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
@@ -41,7 +40,7 @@ color: #fff;
   height: 120px;
   width: auto;
   margin: 2rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
   font-size: 1.2em;
   font-weight: 600;
   user-select: none;
@@ -170,8 +169,10 @@ color: #fff;
   max-width: 340px;
   width: 100%;
   backdrop-filter: blur(8px);
-  z-index: 99999;
+  z-index: 9999;
+  font-family: "Poppins", sans-serif !important;
 }
+
 
 .img-border {
   display: inline-flex;
@@ -180,7 +181,7 @@ color: #fff;
 }
 
 .profile-img {
-  display: inline-flex;
+     display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 2px 2px 2px 2px;
@@ -392,8 +393,7 @@ button1 {
   background-size: 8px 8px;
   --f: blur(1em) brightness(6);
   animation: hii 10s linear infinite;
-    backdrop-filter: var(--f);
-  -webkit-backdrop-filter: var(--f); 
+   backdrop-filter: var(--f); 
 }
 
 @keyframes hii {
