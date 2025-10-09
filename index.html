@@ -98,6 +98,11 @@
     }, 6000); // délai avant disparition (en ms)
   });
 </script>
+<script>
+  // Force le préloader à rester tout en haut du DOM
+  const preloader = document.getElementById('preloader');
+  if (preloader) document.body.appendChild(preloader);
+</script>
 
 
 </body>
