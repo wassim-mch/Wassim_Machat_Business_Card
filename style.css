@@ -1,7 +1,10 @@
 body {
 font-family: 'Poppins', sans-serif;
 color: #fff;  
-overflow-x: hidden;
+ background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 
 
@@ -378,6 +381,7 @@ button1 {
   position: absolute;
   inset: 0;
   z-index: 0;
+  background: rgba(0, 0, 0, 0.3);
   background-image: radial-gradient(
     circle at 50% 50%,
     #0000 0,
@@ -387,6 +391,7 @@ button1 {
   background-size: 8px 8px;
   --f: blur(1em) brightness(6);
   animation: hii 10s linear infinite;
+   backdrop-filter: var(--f); 
 }
 
 @keyframes hii {
