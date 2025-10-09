@@ -21,7 +21,7 @@ color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999999;
+  z-index: 99999;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
@@ -40,7 +40,7 @@ color: #fff;
   height: 120px;
   width: auto;
   margin: 2rem;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Poppins", sans-serif;
   font-size: 1.2em;
   font-weight: 600;
   user-select: none;
@@ -170,9 +170,7 @@ color: #fff;
   width: 100%;
   backdrop-filter: blur(8px);
   z-index: 9999;
-  font-family: "Poppins", sans-serif !important;
 }
-
 
 .img-border {
   display: inline-flex;
@@ -393,7 +391,6 @@ button1 {
   background-size: 8px 8px;
   --f: blur(1em) brightness(6);
   animation: hii 10s linear infinite;
-   backdrop-filter: var(--f); 
 }
 
 @keyframes hii {
