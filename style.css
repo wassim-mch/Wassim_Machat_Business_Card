@@ -1,16 +1,7 @@
-body {
-font-family: 'Poppins', sans-serif;
-color: #fff;  
- background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow-x: hidden;
-}
-
-
-
-
-/* === Preloader Container === */
+/* ===========================================================
+   Preloader — "Wassim Machat" letter animation
+   From Uiverse.io by dexter-st
+   =========================================================== */
 #preloader {
   position: fixed;
   top: 0;
@@ -24,14 +15,11 @@ color: #fff;
   z-index: 999999999999 !important;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
-
 #preloader.hidden {
   opacity: 0;
   visibility: hidden;
 }
 
-/* === Wassim Machat Loader === */
-/* From Uiverse.io by dexter-st */
 .loader-wrapper {
   position: relative;
   display: flex;
@@ -47,7 +35,6 @@ color: #fff;
   color: #fff;
   scale: 2;
 }
-
 .loader {
   position: absolute;
   top: 0;
@@ -64,7 +51,6 @@ color: #fff;
     black 8px
   );
 }
-
 .loader::after {
   content: "";
   position: absolute;
@@ -88,7 +74,6 @@ color: #fff;
     opacity-animation 4s infinite;
   animation-timing-function: cubic-bezier(0.6, 0.8, 0.5, 1);
 }
-
 @keyframes transform-animation {
   0% {
     transform: translate(-55%);
@@ -97,7 +82,6 @@ color: #fff;
     transform: translate(55%);
   }
 }
-
 @keyframes opacity-animation {
   0%, 100% {
     opacity: 0;
@@ -109,14 +93,12 @@ color: #fff;
     opacity: 0;
   }
 }
-
 .loader-letter {
   display: inline-block;
   opacity: 0;
   animation: loader-letter-anim 4s infinite linear;
   z-index: 2;
 }
-
 .loader-letter:nth-child(1) { animation-delay: 0.1s; }
 .loader-letter:nth-child(2) { animation-delay: 0.205s; }
 .loader-letter:nth-child(3) { animation-delay: 0.31s; }
@@ -130,7 +112,6 @@ color: #fff;
 .loader-letter:nth-child(11) { animation-delay: 1.152s; }
 .loader-letter:nth-child(12) { animation-delay: 1.257s; }
 .loader-letter:nth-child(13) { animation-delay: 1.362s; }
- 
 
 @keyframes loader-letter-anim {
   0% { opacity: 0; }
@@ -143,438 +124,358 @@ color: #fff;
   100% { opacity: 0; }
 }
 
+/* ===========================================================
+   Tokens
+   =========================================================== */
+:root {
+  --bg: #0a0a0a;
+  --surface: #0f0f0f;
+  --surface-hover: #141414;
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #ffffff;
+  --text-dim: #a1a1aa;
+  --text-faint: #6b6b73;
+  --accent: #60a5fa;
+  --accent-dim: rgba(96, 165, 250, 0.12);
 
+  --whatsapp: #25d366;
+  --email: #f4b740;
+  --linkedin: #0a66c2;
+  --instagram: #e1306c;
+  --tiktok: #ffffff;
+  --github: #ffffff;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.profile-card {
-  /*background: rgba(255, 253, 253, 0.092);
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgb(47, 47, 47);
-  width: 100%;*/
-  backdrop-filter: blur(1px);
-  z-index: 9999;
-  max-width: 340px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --font-display: "Space Grotesk", "Poppins", sans-serif;
+  --font-body: "Poppins", system-ui, -apple-system, sans-serif;
 }
 
-.img-border {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
+* { box-sizing: border-box; }
 
-.profile-img {
-     display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 2px 2px 2px;
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  border-radius: 50%;
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover; /* évite l’étirement */
-  display: block;
-}
-/* Boutons */
-/* --- Boutons stylés --- */
-.social-link {
-  background: transparent;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 17px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid;
-  border-radius: 30px;
-  padding: 10px 20px;
-  color: #fff;
-  overflow: hidden;
-  transition: color 0.3s ease-out;
-}
-
-.social-link span {
-  margin-left: 10px;
-}
-
-.social-link::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  margin: auto;
-  border-radius: 50%;
-  width: 20em; height: 20em;
-  left: -0em;
-  z-index: -1;
-  transition: box-shadow 0.5s ease-out;
-}
-
-.social-link:hover {
-  color: #fff;
-}
-
-.social-link i {
-  font-size: 1.2rem;
-}
-
-/* --- Couleurs personnalisées --- */
-.whatsapp {
-  border-color: #25D366;
-  color: #25D366;
-}
-.whatsapp:hover::before {
-  box-shadow: inset 0 0 0 10em #25D366;
-}
-
-.instagram {
-  border-color: #E1306C;
-  color: #E1306C;
-}
-.instagram:hover::before {
-  box-shadow: inset 0 0 0 10em #E1306C;
-}
-
-.email {
-  border-color: #D44638;
-  color: #D44638;
-}
-.email:hover::before {
-  box-shadow: inset 0 0 0 10em #D44638;
-}
-
-.linkedin {
-  border-color: #0A66C2;
-  color: #0A66C2;
-}
-.linkedin:hover::before {
-  box-shadow: inset 0 0 0 10em #0A66C2;
-}
-
-.tiktok {
-  border-color: #010101;
-  color: #fff;
-}
-.tiktok:hover::before {
-  box-shadow: inset 0 0 0 10em #010101;
-}
-
-.github {
-  border-color: #9e9e9e;
-  color: #9e9e9e;
-}
-.github:hover::before {
-  box-shadow: inset 0 0 0 10em #9e9e9e;
-}
-
-
-/* From Uiverse.io by AqFox */ 
-button1 {
-  --c: #fff;
- /* text color */
-  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
-    #004dff;
- /* background color */
-  color: #0000;
-  border: none;
-  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
-  text-shadow: calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
-    calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
-  outline-offset: .1em;
-  transition: 0.3s;
-}
-
-button1:hover,
-button1:focus-visible {
-  --_p: 0%;
-  --_i: 1;
-}
-
-button1:active {
-  text-shadow: none;
-  color: var(--c);
-  box-shadow: inset 0 0 9e9q #0005;
-  transition: 0s;
-}
-
-button1 {
-  font-family: system-ui, sans-serif;
-  font-weight: bold;
-  font-size: 1.5rem;
+html, body {
   margin: 0;
-  cursor: pointer;
-  padding: .1em .3em;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
-
-
-
-
-
-/* Footer */
-.footer {
-    font-family: poppins, sans-serif;
-    z-index: 999;
-  width: 100%;
-  color: #bbb;
-  font-size: 16px;
- 
+/* ===========================================================
+   Ambient background — quiet grain + soft glow, no clutter
+   =========================================================== */
+.noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: 0;
 }
 
-
-
-
-
-
-
-/* Responsive */
-@media (max-width: 576px) {
-  .profile-img {
-    width: 100px;
-    height: 100px;
-  }
-  .footer {
-    font-family: poppins, sans-serif;
-    z-index: 999;
-  width: 100%;
-  color: #bbb;
-  font-size: 15px;
- 
-}
+.glow {
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(20px);
 }
 
+/* ===========================================================
+   Card layout
+   =========================================================== */
+.card {
+  position: relative;
+  z-index: 1;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 64px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
 
+/* ===========================================================
+   Avatar
+   =========================================================== */
+.avatar-wrap {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  margin-bottom: 22px;
+}
 
+.avatar-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(from 180deg, var(--accent), rgba(96, 165, 250, 0.1), var(--accent));
+  animation: spin 6s linear infinite;
+}
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 
+.avatar {
+  position: absolute;
+  inset: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface);
+  border: 3px solid var(--bg);
+}
 
+.status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #34d399;
+  border: 3px solid var(--bg);
+}
 
-
-
-
-
-
-
-
-
-
-
-/*
-.container-1::after {
+.status-dot::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 0;
-  background: rgba(0, 0, 0, 0.3);
-  background-image: radial-gradient(
-    circle at 50% 50%,
-    #0000 0,
-    #0000 2px,
-    hsl(0 0 4%) 2px
-  );
-  background-size: 8px 8px;
-  --f: blur(1em) brightness(6);
-  animation: hii 10s linear infinite;
+  border-radius: 50%;
+  background: #34d399;
+  animation: pulse 2s ease-out infinite;
 }
 
-@keyframes hii {
-  0% {
-    backdrop-filter: var(--f) hue-rotate(0deg);
-  }
-  to {
-    backdrop-filter: var(--f) hue-rotate(360deg);
-  }
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0; }
 }
 
-.container-1 {
+/* ===========================================================
+   Identity block
+   =========================================================== */
+.name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px;
+  color: var(--text);
+}
+
+.role {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0 0 18px;
+  letter-spacing: 0.01em;
+}
+
+.role .dot {
+  color: var(--text-faint);
+  margin: 0 2px;
+}
+
+.tagline {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+  max-width: 320px;
+  margin: 0 0 28px;
+}
+
+.tagline-accent {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ===========================================================
+   Primary CTA — portfolio link, visually distinct from socials
+   =========================================================== */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 15px 20px;
+  margin-bottom: 28px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: #050505;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 0 0 0 rgba(96, 165, 250, 0);
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(96, 165, 250, 0.45);
+}
+
+.cta:active {
+  transform: translateY(0);
+}
+
+.cta-arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.cta:hover .cta-arrow {
+  transform: translateX(3px);
+}
+
+/* ===========================================================
+   Link list — each platform claims its own brand color on hover
+   =========================================================== */
+.links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
   position: relative;
-  width: 100%;
-  height: 100%;
-  --c: #09f;
-  background-color: #000;
-  background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 235px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 252px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 252px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 126px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 150px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 150px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 253px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 253px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 204px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 204px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 102px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 134px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 134px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 67px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 179px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 179px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 89.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 299px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 299px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 149.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 215px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 215px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 107.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 281px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 281px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 140.5px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 158px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 158px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 79px, var(--c) 100%, #0000 150%),
-    radial-gradient(4px 100px at 0px 210px, var(--c), #0000),
-    radial-gradient(4px 100px at 300px 210px, var(--c), #0000),
-    radial-gradient(1.5px 1.5px at 150px 105px, var(--c) 100%, #0000 150%);
-  background-size:
-    300px 235px,
-    300px 235px,
-    300px 235px,
-    300px 252px,
-    300px 252px,
-    300px 252px,
-    300px 150px,
-    300px 150px,
-    300px 150px,
-    300px 253px,
-    300px 253px,
-    300px 253px,
-    300px 204px,
-    300px 204px,
-    300px 204px,
-    300px 134px,
-    300px 134px,
-    300px 134px,
-    300px 179px,
-    300px 179px,
-    300px 179px,
-    300px 299px,
-    300px 299px,
-    300px 299px,
-    300px 215px,
-    300px 215px,
-    300px 215px,
-    300px 281px,
-    300px 281px,
-    300px 281px,
-    300px 158px,
-    300px 158px,
-    300px 158px,
-    300px 210px,
-    300px 210px,
-    300px 210px;
-  animation: hi 150s linear infinite;
+  overflow: hidden;
 }
 
-@keyframes hi {
-  0% {
-    background-position:
-      0px 220px,
-      3px 220px,
-      151.5px 337.5px,
-      25px 24px,
-      28px 24px,
-      176.5px 150px,
-      50px 16px,
-      53px 16px,
-      201.5px 91px,
-      75px 224px,
-      78px 224px,
-      226.5px 350.5px,
-      100px 19px,
-      103px 19px,
-      251.5px 121px,
-      125px 120px,
-      128px 120px,
-      276.5px 187px,
-      150px 31px,
-      153px 31px,
-      301.5px 120.5px,
-      175px 235px,
-      178px 235px,
-      326.5px 384.5px,
-      200px 121px,
-      203px 121px,
-      351.5px 228.5px,
-      225px 224px,
-      228px 224px,
-      376.5px 364.5px,
-      250px 26px,
-      253px 26px,
-      401.5px 105px,
-      275px 75px,
-      278px 75px,
-      426.5px 180px;
-  }
-
-  to {
-    background-position:
-      0px 6800px,
-      3px 6800px,
-      151.5px 6917.5px,
-      25px 13632px,
-      28px 13632px,
-      176.5px 13758px,
-      50px 5416px,
-      53px 5416px,
-      201.5px 5491px,
-      75px 17175px,
-      78px 17175px,
-      226.5px 17301.5px,
-      100px 5119px,
-      103px 5119px,
-      251.5px 5221px,
-      125px 8428px,
-      128px 8428px,
-      276.5px 8495px,
-      150px 9876px,
-      153px 9876px,
-      301.5px 9965.5px,
-      175px 13391px,
-      178px 13391px,
-      326.5px 13540.5px,
-      200px 14741px,
-      203px 14741px,
-      351.5px 14848.5px,
-      225px 18770px,
-      228px 18770px,
-      376.5px 18910.5px,
-      250px 5082px,
-      253px 5082px,
-      401.5px 5161px,
-      275px 6375px,
-      278px 6375px,
-      426.5px 6480px;
-  }
-
-}*/
-.container-1 {
-  width: 100%;
-  height: 100%;
-  --color: rgba(114, 114, 114, 0.3);
-  background-color: #191a1a;
-  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
-      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
-  background-size: 55px 55px;
+.link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: var(--link-color, var(--accent));
+  filter: blur(30px);
 }
 
+.link:hover,
+.link:focus-visible {
+  background: var(--surface-hover);
+  border-color: var(--link-color, var(--accent));
+  transform: translateY(-1px);
+}
 
+.link:active {
+  transform: translateY(0) scale(0.99);
+}
 
+.link-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--link-color, var(--accent)) 14%, transparent);
+  color: var(--link-color, var(--accent));
+  transition: transform 0.25s ease;
+}
+
+.link-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.link:hover .link-icon {
+  transform: scale(1.08);
+}
+
+.link-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.link-meta {
+  margin-left: auto;
+  font-size: 0.76rem;
+  color: var(--text-faint);
+  text-align: right;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Per-platform brand color, applied via CSS variable */
+.link--whatsapp  { --link-color: var(--whatsapp); }
+.link--email     { --link-color: var(--email); }
+.link--linkedin  { --link-color: var(--linkedin); }
+.link--instagram { --link-color: var(--instagram); }
+.link--tiktok    { --link-color: var(--tiktok); }
+.link--github    { --link-color: var(--github); }
+
+/* ===========================================================
+   Footer
+   =========================================================== */
+.footer {
+  margin-top: 36px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.footer-sub {
+  margin-top: 3px;
+}
+
+.footer strong {
+  color: var(--text-dim);
+}
+
+/* ===========================================================
+   Accessibility & motion
+   =========================================================== */
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .avatar-ring { animation: none; }
+  .status-dot::after { animation: none; }
+  .link, .cta, .link-icon, .cta-arrow { transition: none; }
+}
+
+/* ===========================================================
+   Small screens
+   =========================================================== */
+@media (max-width: 380px) {
+  .card { padding: 48px 18px 32px; }
+  .name { font-size: 1.5rem; }
+  .link-meta { display: none; }
+}
